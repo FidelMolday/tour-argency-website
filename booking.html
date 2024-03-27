@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now</title>
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+    <div class="book-now-container">
+        <h2>Book Now</h2>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label>Type of Package:</label><br>
+                <input type="checkbox" id="individual" name="package-type" value="individual">
+                <label for="individual">Individual</label><br>
+                <input type="checkbox" id="family" name="package-type" value="family">
+                <label for="family">Family</label><br>
+                <input type="checkbox" id="group" name="package-type" value="group">
+                <label for="group">Group</label><br>
+            </div>
+            <div class="form-group">
+                <label for="visit-date">Date of Visit:</label>
+                <input type="date" id="visit-date" name="visit-date" required>
+            </div>
+            <div class="form-group">
+                <label>Interested Tours/Events:</label><br>
+                <input type="checkbox" id="revolution" name="interested-tours" value="revolution">
+                <label for="revolution">Revolution was just the beginning</label><br>
+                <!-- Add more tour options as needed -->
+            </div>
+            <div class="form-group">
+                <label for="contact-method">Best Way to Contact:</label><br>
+                <input type="checkbox" id="phone-contact" name="contact-method" value="phone">
+                <label for="phone-contact">Phone</label><br>
+                <input type="checkbox" id="email-contact" name="contact-method" value="email">
+                <label for="email-contact">Email</label><br>
+                <input type="checkbox" id="either-contact" name="contact-method" value="either">
+                <label for="either-contact">Either</label><br>
+            </div>
+            <div class="form-group">
+                <label>Best Time for Callback (If Phone):</label><br>
+                <input type="radio" id="8-11am" name="callback-time" value="8-11am">
+                <label for="8-11am">8-11 am</label><br>
+                <input type="radio" id="12-4pm" name="callback-time" value="12-4pm">
+                <label for="12-4pm">12-4 pm</label><br>
+                <input type="radio" id="6-10pm" name="callback-time" value="6-10pm">
+                <label for="6-10pm">6-10 pm</label><br>
+            </div>
+            <div class="form-group">
+                <label for="checkin-date">Check-in Date:</label>
+                <input type="date" id="checkin-date" name="checkin-date" required>
+            </div>
+            <div class="form-group">
+                <label for="checkout-date">Check-out Date:</label>
+                <input type="date" id="checkout-date" name="checkout-date" required>
+            </div>
+            <div class="form-group">
+                <label for="additional-comment">Additional Comments:</label>
+                <textarea id="additional-comment" name="additional-comment" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="source">How did you hear about us?</label>
+                <select id="source" name="source">
+                    <option value="google">Google</option>
+                    <option value="facebook">Facebook</option>
+                    <option value="instagram">Instagram</option>
+                    <option value="friend">Friend</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="upload-doc">Upload Document (ID, Passport):</label>
+                <input type="file" id="upload-doc" name="upload-doc" accept="image/*,.pdf" required>
+            </div>
+            <button type="submit" class="book-now-btn">Book Now</button>
+            <a href="cancellation.html" class="book-now-btn">Cancel Booking</a>
+        </form>
+    </div>
+
+    <script>
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    checkboxes.forEach(cb => {
+                        if (cb !== this) {
+                            cb.disabled = true;
+                        }
+                    });
+                } else {
+                    checkboxes.forEach(cb => {
+                        cb.disabled = false;
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
