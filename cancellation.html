@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancellation Form</title>
+    <link rel="stylesheet" href="cancellation.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Cancellation Form</h2>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="booking-id">Booking ID:</label>
+                <input type="text" id="booking-id" name="booking-id" required>
+            </div>
+            <div class="form-group">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name" required>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="contact-number">Contact Number:</label>
+                <input type="tel" id="contact-number" name="contact-number" required>
+            </div>
+            <div class="form-group">
+                <label for="reason">Reason for Cancellation:</label>
+                <textarea id="reason" name="reason" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="additional-comment">Additional Comment:</label>
+                <textarea id="additional-comment" name="additional-comment" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="confirmation">Are you sure you want to cancel?</label>
+                <select id="confirmation" name="confirmation" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
